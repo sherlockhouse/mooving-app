@@ -19,8 +19,20 @@ type Props = {};
 
 const RootStack = createStackNavigator(
   {
-    Home: Home,
-    Balance: Balance,
+    Home: {
+      screen: Home,
+      navigationOptions: () => ({
+        title: `Home`,
+        headerBackTitle: null
+      }),
+    },
+    Balance: {
+      screen: Balance,
+      navigationOptions: () => ({
+        title: `Balance`,
+        headerBackTitle: null
+      }),
+    },
   },
   {
     initialRouteName: 'Home',
