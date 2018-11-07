@@ -1,15 +1,27 @@
 import React from 'react'
 import { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { inject, observer } from 'mobx-react';
+import { STORE_ACCOUNT } from '../../constants';
+import { Balance } from '../../components/Balance';
 import styles from './styles';
 
-type Props = {};
-export default class Balance extends Component<Props> {
+type BalanceContainerProps = {
+  [STORE_ACCOUNT]?: any;
+};
+
+@inject(STORE_ACCOUNT)
+@observer
+export default class BalanceContainer extends Component<BalanceContainerProps> {
   render() {
+    const balance = this.props[STORE_ACCOUNT].balance;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
+      <Balance 
+        balance={ balance }
+        onIncrement={ () => { this.props[STORE_ACCOUNT].updateBalance(balance + 1) } }
+        onDecrement={ () => { this.props[STORE_ACCOUNT].updateBalance(balance - 1) } }
+      />
       </View>
     );
   }

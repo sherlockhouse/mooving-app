@@ -9,12 +9,12 @@ export enum RequestState {
 export class AccountStore {
 
   @observable public requestStatus: RequestState;
-  @observable public balance;
+  @observable public balance = 0;
   @observable public firstName: string = 'Moshe';
   @observable public lastName: string;
 
   @action('update balance')
-  public async updateBalance(newBalance) {
+  public async updateBalance(newBalance: number) {
     this.requestStatus = RequestState.pending;
     try {
       const response = await newBalance;

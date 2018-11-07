@@ -7,6 +7,7 @@ import { STORE_ACCOUNT } from '../../constants';
 import styles from './styles';
 
 interface HomeContainerProps {
+  [STORE_ACCOUNT]?: any;
   navigation: NavigationScreenProp<any,any>
 }
 
