@@ -14,6 +14,7 @@ import { Provider } from 'mobx-react'
 import RNLanguages from 'react-native-languages';
 import Home from './common/containers/Home';
 import Balance from './common/containers/Balance';
+import Map from './common/containers/Map';
 import stores from "./common/stores";
 
 type Props = {};
@@ -31,6 +32,13 @@ const RootStack = createStackNavigator(
       screen: Balance,
       navigationOptions: () => ({
         title: `Balance`,
+        headerBackTitle: null
+      }),
+    },
+    Map: {
+      screen: Map,
+      navigationOptions: () => ({
+        title: `Map`,
         headerBackTitle: null
       }),
     },

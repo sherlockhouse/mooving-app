@@ -22,7 +22,8 @@ export default class Home extends Component<HomeContainerProps> {
         <Text style={styles.welcome}>
           Your language is set to { this.props.language }
         </Text>
-        <Text style={styles.instructions} onPress={() => this.props.navigation.navigate('Balance')}>To get started, edit App.js</Text>
+        <Text style={styles.instructions} onPress={() => this.props.navigation.navigate('Balance')}>Show balances</Text>
+        <Text style={styles.instructions} onPress={() => this.props.navigation.navigate('Map')}>Show Map</Text>
       </View>
     );
   }
