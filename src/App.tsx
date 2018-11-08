@@ -11,6 +11,7 @@ import { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { SafeAreaView } from "react-native";
 import { Provider } from 'mobx-react'
+import RNLanguages from 'react-native-languages';
 import Home from './common/containers/Home';
 import Balance from './common/containers/Balance';
 import stores from "./common/stores";
@@ -42,7 +43,7 @@ const RootStack = createStackNavigator(
 export default class App extends Component<Props> {
   render() {
     return (
-      <Provider {...stores}>
+      <Provider {...stores} language={RNLanguages.language} >
         <SafeAreaView style={{ flex: 1 }}>
           <RootStack />
         </SafeAreaView>

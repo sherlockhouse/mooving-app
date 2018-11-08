@@ -1,3 +1,7 @@
 rootProject.name = 'Mooving'
+include ':@mapbox_react-native-mapbox-gl'
+project(':@mapbox_react-native-mapbox-gl').projectDir = new File(rootProject.projectDir, '../node_modules/@mapbox/react-native-mapbox-gl/android/rctmgl')
+include ':react-native-languages'
+project(':react-native-languages').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-languages/android')
 
 include ':app'

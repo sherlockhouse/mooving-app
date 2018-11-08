@@ -26,6 +26,10 @@ target 'Mooving' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'RNLanguages', :path => '../node_modules/react-native-languages'
+
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@mapbox/react-native-mapbox-gl'
+
   target 'MoovingTests' do
     inherit! :search_paths
     # Pods for testing
